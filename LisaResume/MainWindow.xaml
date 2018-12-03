@@ -50,7 +50,7 @@
         <TextBlock x:Name="textBlock" TextAlignment="Center" HorizontalAlignment="Left" Margin="4,159,0,0" TextWrapping="Wrap" Text="Click each of the 4 buttons to learn a little about me and what I can bring to the team at SteelCloud LLC." VerticalAlignment="Top" Height="173" Width="415" FontFamily="Calibri" FontSize="35" Foreground="White" Grid.Column="1"/>
         <Image x:Name="image" Grid.Column="1" HorizontalAlignment="Left" Height="383" Margin="92,332,0,-211" VerticalAlignment="Top" Width="230" Source="Components/cave.jpg">
             <Image.OpacityMask>
-                <ImageBrush ImageSource="Components/FB_IMG_1533489696092.jpg"/>
+                <ImageBrush ImageSource="Components/Lisa.jpg"/>
             </Image.OpacityMask>
         </Image>
 

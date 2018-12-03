@@ -228,15 +228,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Components\BackgroundImage.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Components\FB_IMG_1533489696092.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Components\FB_IMG_1533489703983.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Components\icon.png" />
   </ItemGroup>
   <ItemGroup>

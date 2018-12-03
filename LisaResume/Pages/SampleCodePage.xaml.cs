@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LisaResume.Back_End_Code;
+using LisaResume.Back_End_Code.Classes;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -6,10 +8,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-
-using LisaResume.Back_End_Code;
-using LisaResume.Back_End_Code.Classes;
-
 using Path = System.IO.Path;
 
 namespace LisaResume.Pages
@@ -27,10 +25,10 @@ namespace LisaResume.Pages
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
-        private Process                    pDocked;
-        private IntPtr                     hWndOriginalParent;
-        private IntPtr                     hWndDocked;
-        public  System.Windows.Forms.Panel panel;
+        private Process pDocked;
+        private IntPtr hWndOriginalParent;
+        private IntPtr hWndDocked;
+        public System.Windows.Forms.Panel panel;
 
         public string FilePath { get; set; }
 
@@ -38,9 +36,9 @@ namespace LisaResume.Pages
         {
             InitializeComponent();
 
-            var o   = SampleCodePages.Content;
+            var o = SampleCodePages.Content;
 
-            if ( path == "" )
+            if (path == "")
             {
                 FilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                                   @"Components\DefaultLisaResume.json");
@@ -52,25 +50,25 @@ namespace LisaResume.Pages
                 Clipboard.SetText(FilePath);
             }
 
-            panel      = new System.Windows.Forms.Panel();
+            panel = new System.Windows.Forms.Panel();
             host.Child = panel;
             dockIt("notepad.exe", path);
         }
 
         private void dockIt(string utility, string path)
         {
-            if ( hWndDocked != IntPtr.Zero )
+            if (hWndDocked != IntPtr.Zero)
             {
                 return;
             }
 
             pDocked = Process.Start(utility, path);
 
-            while ( hWndDocked == IntPtr.Zero )
+            while (hWndDocked == IntPtr.Zero)
             {
                 pDocked.WaitForInputIdle(1000);
                 pDocked.Refresh();
-                if ( pDocked.HasExited )
+                if (pDocked.HasExited)
                 {
                     return;
                 }
@@ -109,51 +107,29 @@ namespace LisaResume.Pages
 
         private void ListBoxItem_ViewHtmlDocumentType_OnSelected(object p_sender, RoutedEventArgs p_e)
         {
-            if ( singleton.DocumentClass is JsonTranslator translatorJson )
-            {
-                translatorJson.Translate(Translator.FutureDocType.Html);
-                Clipboard.SetText(Path.ChangeExtension(translatorJson.FilePath,
-                                                                 translatorJson.GetFutureDocType(translatorJson
-                                                                                                    .FutureDocumentType)));
-                FilePath = translatorJson.FilePath;
-            }
-
-            else if ( singleton.DocumentClass is XmlTranslator translatorXml )
-            {
-                translatorXml.Translate(Translator.FutureDocType.Html);
-                Clipboard.SetText(translatorXml.FilePath);
-                FilePath = translatorXml.FilePath;
-            }
-
-            else if ( singleton.DocumentClass is HtmlTranslator translatorHtml )
-            {
-                translatorHtml.Publish(translatorHtml.FilePath);
-                Clipboard.SetText(translatorHtml.FilePath);
-                FilePath = translatorHtml.FilePath;
-            }
-
-            Clipboard.SetText(FilePath);
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                                              @"Components\LisaResume.html");
+            Process.Start(path);
             
-            SampleCodePages.Content = new SampleCodePage(FilePath);
         }
 
         private void ListBoxItem_ViewJsonDocumentType_OnSelected(object p_sender, RoutedEventArgs p_e)
         {
-            if ( singleton.DocumentClass is JsonTranslator translatorJson )
+            if (singleton.DocumentClass is JsonTranslator translatorJson)
             {
                 translatorJson.Publish(translatorJson.FilePath);
                 Clipboard.SetText(translatorJson.FilePath);
                 FilePath = translatorJson.FilePath;
             }
 
-            else if ( singleton.DocumentClass is XmlTranslator translatorXml )
+            else if (singleton.DocumentClass is XmlTranslator translatorXml)
             {
                 translatorXml.Translate(Translator.FutureDocType.Json);
                 Clipboard.SetText(translatorXml.FilePath);
                 FilePath = translatorXml.FilePath;
             }
 
-            else if ( singleton.DocumentClass is HtmlTranslator translatorHtml )
+            else if (singleton.DocumentClass is HtmlTranslator translatorHtml)
             {
                 translatorHtml.Translate(Translator.FutureDocType.Json);
                 Clipboard.SetText(translatorHtml.FilePath);
@@ -166,9 +142,9 @@ namespace LisaResume.Pages
 
         private void ListBoxItem_ViewXmlDocumentType_OnSelected(object p_sender, RoutedEventArgs p_e)
         {
-            if ( singleton.DocumentClass is JsonTranslator translatorJson )
+            if (singleton.DocumentClass is JsonTranslator translatorJson)
             {
-                if ( translatorJson.FilePath.Contains("Default") )
+                if (translatorJson.FilePath.Contains("Default"))
                 {
                     translatorJson.FilePath =
                         Path
@@ -185,14 +161,14 @@ namespace LisaResume.Pages
                 FilePath = translatorJson.FilePath;
             }
 
-            else if ( singleton.DocumentClass is XmlTranslator translatorXml )
+            else if (singleton.DocumentClass is XmlTranslator translatorXml)
             {
                 translatorXml.Publish(translatorXml.FilePath);
                 Clipboard.SetText(translatorXml.FilePath);
                 FilePath = translatorXml.FilePath;
             }
 
-            else if ( singleton.DocumentClass is HtmlTranslator translatorHtml )
+            else if (singleton.DocumentClass is HtmlTranslator translatorHtml)
             {
                 translatorHtml.Translate(Translator.FutureDocType.Xml);
                 Clipboard.SetText(translatorHtml.FilePath);
@@ -218,20 +194,20 @@ namespace LisaResume.Pages
 
         private void ListBoxItem_ToHex_OnSelected(object p_sender, RoutedEventArgs p_e)
         {
-                var str       = File.ReadAllText(FilePath);
-                var    hexOutput = new StringBuilder();
+            var str = File.ReadAllText(FilePath);
+            var hexOutput = new StringBuilder();
 
-                var charValues = str.ToCharArray();
-                foreach (var _eachChar in charValues)
-                {
-                    var value = Convert.ToInt32(_eachChar);
-                    hexOutput.Append($"{value:X}");
-                }
+            var charValues = str.ToCharArray();
+            foreach (var _eachChar in charValues)
+            {
+                var value = Convert.ToInt32(_eachChar);
+                hexOutput.Append($"{value:X}");
+            }
 
-                var path = Path.ChangeExtension(FilePath, ".txt");
+            var path = Path.ChangeExtension(FilePath, ".txt");
 
-                System.IO.File.WriteAllText(path, hexOutput.ToString());
-                //Process.Start("notepad.exe", path);
+            System.IO.File.WriteAllText(path, hexOutput.ToString());
+            //Process.Start("notepad.exe", path);
 
             SampleCodePages.Content = new SampleCodePage(path);
         }

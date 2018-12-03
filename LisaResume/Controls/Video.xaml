@@ -17,7 +17,7 @@
 
 
         </Grid.RowDefinitions>
-        <Image Name="VideoPreview" Source="/Components/FB_IMG_1533489703983.jpg" Grid.Row="0"/>
+        <Image Name="VideoPreview" Source="/Components/Lisa.jpg" Grid.Row="0"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
 
 
