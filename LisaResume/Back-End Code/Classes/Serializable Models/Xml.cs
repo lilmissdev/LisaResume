@@ -31,38 +31,21 @@ public partial class root
 public partial class rootRootOfJson
 {
 
-    private rootRootOfJsonAwards awardsField;
-
     private rootRootOfJsonBasics basicsField;
 
     private rootRootOfJsonEducation educationField;
 
-    private rootRootOfJsonInterests interestsField;
+    private string[] interestsField;
 
-    private rootRootOfJsonLanguages languagesField;
+    private rootRootOfJsonLocation locationField;
 
-    private rootRootOfJsonPublications publicationsField;
+    private rootRootOfJsonElement[] referencesField;
 
-    private rootRootOfJsonReferences referencesField;
-
-    private rootRootOfJsonSkills skillsField;
+    private string[] skillsField;
 
     private rootRootOfJsonVolunteer volunteerField;
 
-    private rootRootOfJsonWork workField;
-
-    /// <remarks/>
-    public rootRootOfJsonAwards awards
-    {
-        get
-        {
-            return this.awardsField;
-        }
-        set
-        {
-            this.awardsField = value;
-        }
-    }
+    private rootRootOfJsonElement1[] workField;
 
     /// <remarks/>
     public rootRootOfJsonBasics basics
@@ -91,7 +74,8 @@ public partial class rootRootOfJson
     }
 
     /// <remarks/>
-    public rootRootOfJsonInterests interests
+    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
+    public string[] interests
     {
         get
         {
@@ -104,33 +88,21 @@ public partial class rootRootOfJson
     }
 
     /// <remarks/>
-    public rootRootOfJsonLanguages languages
+    public rootRootOfJsonLocation location
     {
         get
         {
-            return this.languagesField;
+            return this.locationField;
         }
         set
         {
-            this.languagesField = value;
+            this.locationField = value;
         }
     }
 
     /// <remarks/>
-    public rootRootOfJsonPublications publications
-    {
-        get
-        {
-            return this.publicationsField;
-        }
-        set
-        {
-            this.publicationsField = value;
-        }
-    }
-
-    /// <remarks/>
-    public rootRootOfJsonReferences references
+    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
+    public rootRootOfJsonElement[] references
     {
         get
         {
@@ -143,7 +115,8 @@ public partial class rootRootOfJson
     }
 
     /// <remarks/>
-    public rootRootOfJsonSkills skills
+    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
+    public string[] skills
     {
         get
         {
@@ -169,7 +142,8 @@ public partial class rootRootOfJson
     }
 
     /// <remarks/>
-    public rootRootOfJsonWork work
+    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
+    public rootRootOfJsonElement1[] work
     {
         get
         {
@@ -186,98 +160,6 @@ public partial class rootRootOfJson
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonAwards
-{
-
-    private rootRootOfJsonAwardsElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonAwardsElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonAwardsElement
-{
-
-    private string awarderField;
-
-    private System.DateTime dateField;
-
-    private string summaryField;
-
-    private string titleField;
-
-    /// <remarks/>
-    public string awarder
-    {
-        get
-        {
-            return this.awarderField;
-        }
-        set
-        {
-            this.awarderField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime date
-    {
-        get
-        {
-            return this.dateField;
-        }
-        set
-        {
-            this.dateField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string summary
-    {
-        get
-        {
-            return this.summaryField;
-        }
-        set
-        {
-            this.summaryField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string title
-    {
-        get
-        {
-            return this.titleField;
-        }
-        set
-        {
-            this.titleField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
 public partial class rootRootOfJsonBasics
 {
 
@@ -285,19 +167,15 @@ public partial class rootRootOfJsonBasics
 
     private string labelField;
 
-    private rootRootOfJsonBasicsLocation locationField;
-
     private string nameField;
 
     private string phoneField;
 
     private object pictureField;
 
-    private rootRootOfJsonBasicsProfiles profilesField;
-
     private string summaryField;
 
-    private string websiteField;
+    private string[] websiteField;
 
     /// <remarks/>
     public string email
@@ -322,19 +200,6 @@ public partial class rootRootOfJsonBasics
         set
         {
             this.labelField = value;
-        }
-    }
-
-    /// <remarks/>
-    public rootRootOfJsonBasicsLocation location
-    {
-        get
-        {
-            return this.locationField;
-        }
-        set
-        {
-            this.locationField = value;
         }
     }
 
@@ -378,19 +243,6 @@ public partial class rootRootOfJsonBasics
     }
 
     /// <remarks/>
-    public rootRootOfJsonBasicsProfiles profiles
-    {
-        get
-        {
-            return this.profilesField;
-        }
-        set
-        {
-            this.profilesField = value;
-        }
-    }
-
-    /// <remarks/>
     public string summary
     {
         get
@@ -400,6 +252,144 @@ public partial class rootRootOfJsonBasics
         set
         {
             this.summaryField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
+    public string[] website
+    {
+        get
+        {
+            return this.websiteField;
+        }
+        set
+        {
+            this.websiteField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class rootRootOfJsonEducation
+{
+
+    private rootRootOfJsonEducationElement elementField;
+
+    /// <remarks/>
+    public rootRootOfJsonEducationElement element
+    {
+        get
+        {
+            return this.elementField;
+        }
+        set
+        {
+            this.elementField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.SerializableAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class rootRootOfJsonEducationElement
+{
+
+    private string areaField;
+
+    private string[] coursesField;
+
+    private string endDateField;
+
+    private decimal gpaField;
+
+    private string institutionField;
+
+    private string startDateField;
+
+    private string websiteField;
+
+    /// <remarks/>
+    public string area
+    {
+        get
+        {
+            return this.areaField;
+        }
+        set
+        {
+            this.areaField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
+    public string[] courses
+    {
+        get
+        {
+            return this.coursesField;
+        }
+        set
+        {
+            this.coursesField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string endDate
+    {
+        get
+        {
+            return this.endDateField;
+        }
+        set
+        {
+            this.endDateField = value;
+        }
+    }
+
+    /// <remarks/>
+    public decimal gpa
+    {
+        get
+        {
+            return this.gpaField;
+        }
+        set
+        {
+            this.gpaField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string institution
+    {
+        get
+        {
+            return this.institutionField;
+        }
+        set
+        {
+            this.institutionField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string startDate
+    {
+        get
+        {
+            return this.startDateField;
+        }
+        set
+        {
+            this.startDateField = value;
         }
     }
 
@@ -421,7 +411,7 @@ public partial class rootRootOfJsonBasics
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonBasicsLocation
+public partial class rootRootOfJsonLocation
 {
 
     private string addressField;
@@ -504,284 +494,40 @@ public partial class rootRootOfJsonBasicsLocation
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonBasicsProfiles
+public partial class rootRootOfJsonElement
 {
 
-    private rootRootOfJsonBasicsProfilesElement elementField;
+    private string companyField;
 
-    /// <remarks/>
-    public rootRootOfJsonBasicsProfilesElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonBasicsProfilesElement
-{
-
-    private string networkField;
-
-    private string urlField;
-
-    private string usernameField;
-
-    /// <remarks/>
-    public string network
-    {
-        get
-        {
-            return this.networkField;
-        }
-        set
-        {
-            this.networkField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string url
-    {
-        get
-        {
-            return this.urlField;
-        }
-        set
-        {
-            this.urlField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string username
-    {
-        get
-        {
-            return this.usernameField;
-        }
-        set
-        {
-            this.usernameField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonEducation
-{
-
-    private rootRootOfJsonEducationElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonEducationElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonEducationElement
-{
-
-    private string areaField;
-
-    private rootRootOfJsonEducationElementCourses coursesField;
-
-    private System.DateTime endDateField;
-
-    private decimal gpaField;
-
-    private string institutionField;
-
-    private System.DateTime startDateField;
-
-    private string studyTypeField;
-
-    /// <remarks/>
-    public string area
-    {
-        get
-        {
-            return this.areaField;
-        }
-        set
-        {
-            this.areaField = value;
-        }
-    }
-
-    /// <remarks/>
-    public rootRootOfJsonEducationElementCourses courses
-    {
-        get
-        {
-            return this.coursesField;
-        }
-        set
-        {
-            this.coursesField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime endDate
-    {
-        get
-        {
-            return this.endDateField;
-        }
-        set
-        {
-            this.endDateField = value;
-        }
-    }
-
-    /// <remarks/>
-    public decimal gpa
-    {
-        get
-        {
-            return this.gpaField;
-        }
-        set
-        {
-            this.gpaField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string institution
-    {
-        get
-        {
-            return this.institutionField;
-        }
-        set
-        {
-            this.institutionField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime startDate
-    {
-        get
-        {
-            return this.startDateField;
-        }
-        set
-        {
-            this.startDateField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string studyType
-    {
-        get
-        {
-            return this.studyTypeField;
-        }
-        set
-        {
-            this.studyTypeField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonEducationElementCourses
-{
-
-    private string elementField;
-
-    /// <remarks/>
-    public string element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonInterests
-{
-
-    private rootRootOfJsonInterestsElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonInterestsElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonInterestsElement
-{
-
-    private string[] keywordsField;
+    private string contactField;
 
     private string nameField;
 
+    private string positionField;
+
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
-    public string[] keywords
+    public string company
     {
         get
         {
-            return this.keywordsField;
+            return this.companyField;
         }
         set
         {
-            this.keywordsField = value;
+            this.companyField = value;
+        }
+    }
+
+    /// <remarks/>
+    public string contact
+    {
+        get
+        {
+            return this.contactField;
+        }
+        set
+        {
+            this.contactField = value;
         }
     }
 
@@ -797,310 +543,17 @@ public partial class rootRootOfJsonInterestsElement
             this.nameField = value;
         }
     }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonLanguages
-{
-
-    private rootRootOfJsonLanguagesElement elementField;
 
     /// <remarks/>
-    public rootRootOfJsonLanguagesElement element
+    public string position
     {
         get
         {
-            return this.elementField;
+            return this.positionField;
         }
         set
         {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonLanguagesElement
-{
-
-    private string fluencyField;
-
-    private string languageField;
-
-    /// <remarks/>
-    public string fluency
-    {
-        get
-        {
-            return this.fluencyField;
-        }
-        set
-        {
-            this.fluencyField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string language
-    {
-        get
-        {
-            return this.languageField;
-        }
-        set
-        {
-            this.languageField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonPublications
-{
-
-    private rootRootOfJsonPublicationsElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonPublicationsElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonPublicationsElement
-{
-
-    private string nameField;
-
-    private string publisherField;
-
-    private System.DateTime releaseDateField;
-
-    private string summaryField;
-
-    private string websiteField;
-
-    /// <remarks/>
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string publisher
-    {
-        get
-        {
-            return this.publisherField;
-        }
-        set
-        {
-            this.publisherField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime releaseDate
-    {
-        get
-        {
-            return this.releaseDateField;
-        }
-        set
-        {
-            this.releaseDateField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string summary
-    {
-        get
-        {
-            return this.summaryField;
-        }
-        set
-        {
-            this.summaryField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string website
-    {
-        get
-        {
-            return this.websiteField;
-        }
-        set
-        {
-            this.websiteField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonReferences
-{
-
-    private rootRootOfJsonReferencesElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonReferencesElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonReferencesElement
-{
-
-    private string nameField;
-
-    private string referenceField;
-
-    /// <remarks/>
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string reference
-    {
-        get
-        {
-            return this.referenceField;
-        }
-        set
-        {
-            this.referenceField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonSkills
-{
-
-    private rootRootOfJsonSkillsElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonSkillsElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonSkillsElement
-{
-
-    private string[] keywordsField;
-
-    private string levelField;
-
-    private string nameField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("element", IsNullable = false)]
-    public string[] keywords
-    {
-        get
-        {
-            return this.keywordsField;
-        }
-        set
-        {
-            this.keywordsField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string level
-    {
-        get
-        {
-            return this.levelField;
-        }
-        set
-        {
-            this.levelField = value;
-        }
-    }
-
-    /// <remarks/>
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
+            this.positionField = value;
         }
     }
 }
@@ -1135,23 +588,20 @@ public partial class rootRootOfJsonVolunteer
 public partial class rootRootOfJsonVolunteerElement
 {
 
-    private System.DateTime endDateField;
-
-    private rootRootOfJsonVolunteerElementHighlights highlightsField;
+    private ushort endDateField;
 
     private string organizationField;
 
     private string positionField;
 
-    private System.DateTime startDateField;
+    private ushort startDateField;
 
     private string summaryField;
 
     private string websiteField;
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime endDate
+    public ushort endDate
     {
         get
         {
@@ -1160,19 +610,6 @@ public partial class rootRootOfJsonVolunteerElement
         set
         {
             this.endDateField = value;
-        }
-    }
-
-    /// <remarks/>
-    public rootRootOfJsonVolunteerElementHighlights highlights
-    {
-        get
-        {
-            return this.highlightsField;
-        }
-        set
-        {
-            this.highlightsField = value;
         }
     }
 
@@ -1203,8 +640,7 @@ public partial class rootRootOfJsonVolunteerElement
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime startDate
+    public ushort startDate
     {
         get
         {
@@ -1247,64 +683,16 @@ public partial class rootRootOfJsonVolunteerElement
 [System.SerializableAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonVolunteerElementHighlights
-{
-
-    private string elementField;
-
-    /// <remarks/>
-    public string element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonWork
-{
-
-    private rootRootOfJsonWorkElement elementField;
-
-    /// <remarks/>
-    public rootRootOfJsonWorkElement element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonWorkElement
+public partial class rootRootOfJsonElement1
 {
 
     private string companyField;
 
-    private System.DateTime endDateField;
-
-    private rootRootOfJsonWorkElementHighlights highlightsField;
+    private string endDateField;
 
     private string positionField;
 
-    private System.DateTime startDateField;
+    private string startDateField;
 
     private string summaryField;
 
@@ -1324,8 +712,7 @@ public partial class rootRootOfJsonWorkElement
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime endDate
+    public string endDate
     {
         get
         {
@@ -1334,19 +721,6 @@ public partial class rootRootOfJsonWorkElement
         set
         {
             this.endDateField = value;
-        }
-    }
-
-    /// <remarks/>
-    public rootRootOfJsonWorkElementHighlights highlights
-    {
-        get
-        {
-            return this.highlightsField;
-        }
-        set
-        {
-            this.highlightsField = value;
         }
     }
 
@@ -1364,8 +738,7 @@ public partial class rootRootOfJsonWorkElement
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
-    public System.DateTime startDate
+    public string startDate
     {
         get
         {
@@ -1400,29 +773,6 @@ public partial class rootRootOfJsonWorkElement
         set
         {
             this.websiteField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class rootRootOfJsonWorkElementHighlights
-{
-
-    private string elementField;
-
-    /// <remarks/>
-    public string element
-    {
-        get
-        {
-            return this.elementField;
-        }
-        set
-        {
-            this.elementField = value;
         }
     }
 }

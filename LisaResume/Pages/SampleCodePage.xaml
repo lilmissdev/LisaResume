@@ -70,6 +70,6 @@
             <TabItem Header="View in Word" MouseDoubleClick="ListBoxItem_ViewWordDocumentType_OnSelected"/>
             <TabItem Header="Default" Visibility="Hidden" IsSelected="True"/>
         </TabControl>-->
-        <Frame x:Name="SampleCodePages" Margin="0,62,0,138" />
+        <Frame x:Name="SampleCodePages" Margin="10,0,0,-13" />
     </Grid>
 </Page>
