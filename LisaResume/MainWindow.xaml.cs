@@ -1,4 +1,8 @@
-﻿using LisaResume.Windows;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+
+using LisaResume.Windows;
 
 using System.Windows;
 
@@ -36,8 +40,11 @@ namespace LisaResume
 
         private void Button_WatchNow_Click(object sender, RoutedEventArgs e)
         {
-            VideoWindow win2 = new VideoWindow();
-            win2.Show();
+            //VideoWindow win2 = new VideoWindow();
+            //win2.Show();
+
+            Process.Start(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                                       @"Components\LisaResume.mp4"));
         }
 
         private void Button_AboutMe_Click(object sender, RoutedEventArgs e)

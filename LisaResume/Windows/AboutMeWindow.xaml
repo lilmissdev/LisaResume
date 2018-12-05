@@ -30,8 +30,8 @@
 
         <Image x:Name="PictureOfMe" Source="/Components/tree.jpg" Grid.Row="0" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock FontFamily="Calibri" FontSize="18" HorizontalAlignment="Left" Margin="342,10,0,0" TextWrapping="Wrap" Text="My name is Lisa Connell. I'm a software developer with a strong work ethic and a proven track record of self-management. Most of my experience has been in web design, but as you can see by reviewing this WPF application I built my resume into, I am more than capable of learning more skills and expanding my development abilities to accomplish whatever I put my mind to." VerticalAlignment="Top" Height="180" Width="424"/>
-        <TextBlock FontFamily="Calibri" FontSize="18" HorizontalAlignment="Left" Margin="342,212,0,0" TextWrapping="Wrap" Text="I'm an avid rock climber and work part time at Sport Rock as a climbing instructor because I enjoy teaching others about climbing." VerticalAlignment="Top" Height="69" Width="424"/>
-        <TextBlock FontFamily="Calibri" FontSize="18" HorizontalAlignment="Left" Height="92" Margin="342,306,0,0" TextWrapping="Wrap" Text="I'm very personable and can get along with anyone. In my previous jobs, I was often put in management positions because I have always been able to work with my colleagues to make sure that we are able to get any job done. " VerticalAlignment="Top" Width="424"/>
+        <TextBlock FontFamily="Calibri" FontSize="18" HorizontalAlignment="Left" Margin="342,195,0,0" TextWrapping="Wrap" Text="I'm an avid rock climber and work part time at Sport Rock as a climbing instructor because I enjoy teaching others about climbing." VerticalAlignment="Top" Height="69" Width="424"/>
+        <TextBlock FontFamily="Calibri" FontSize="18" HorizontalAlignment="Left" Height="119" Margin="342,269,0,0" TextWrapping="Wrap" Text="I'm very personable and can get along with anyone. In my previous jobs, I was often put in management positions because I have always been able to work with my colleagues to make sure that we are able to get any job done. " VerticalAlignment="Top" Width="424"/>
 
     </Grid>
 </Window>

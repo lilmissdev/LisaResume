@@ -31,10 +31,15 @@ namespace LisaResume.Pages
         public System.Windows.Forms.Panel panel;
 
         public string FilePath { get; set; }
+        public string Utility { get; set; }
 
         public SampleCodePage(string path)
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(Utility))
+            {
+                Utility = "notepad.exe";
+            }
 
             var o = SampleCodePages.Content;
 
@@ -52,7 +57,37 @@ namespace LisaResume.Pages
 
             panel = new System.Windows.Forms.Panel();
             host.Child = panel;
-            dockIt("notepad.exe", path);
+            dockIt(Utility, path);
+        }
+
+        public SampleCodePage(string path, string utility)
+        {
+            InitializeComponent();
+
+            Utility = utility;
+
+            if (string.IsNullOrEmpty(Utility))
+            {
+                Utility = "notepad.exe";
+            }
+
+            var o = SampleCodePages.Content;
+
+            if (path == "")
+            {
+                FilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                                                  @"Components\DefaultLisaResume.json");
+                path = FilePath;
+                var json = new JsonTranslator(Translator.CurrentDocType.Json,
+                                                         Translator.FutureDocType.Json, FilePath);
+                json.Translate(Translator.FutureDocType.Json);
+
+                Clipboard.SetText(FilePath);
+            }
+
+            panel = new System.Windows.Forms.Panel();
+            host.Child = panel;
+            dockIt(path);
         }
 
         private void dockIt(string utility, string path)
@@ -82,6 +117,35 @@ namespace LisaResume.Pages
             AlignToPannel();
         }
 
+        private void dockIt(string path)
+        {
+            if (hWndDocked != IntPtr.Zero)
+            {
+                return;
+            }
+
+            pDocked = Process.Start(path);
+
+            while (hWndDocked == IntPtr.Zero)
+            {
+                pDocked.WaitForInputIdle(1000);
+                pDocked.Refresh();
+                if (pDocked.HasExited)
+                {
+                    return;
+                }
+
+                hWndDocked = pDocked.MainWindowHandle;
+            }
+
+            hWndOriginalParent = SetParent(hWndDocked, panel.Handle);
+            SizeChanged += window_SizeChanged;
+
+            AlignToPannel();
+        }
+
+
+
         private void AlignToPannel()
         {
             MoveWindow(hWndDocked, 0, 0, panel.Width, panel.Height, true);
@@ -110,7 +174,7 @@ namespace LisaResume.Pages
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                                               @"Components\LisaResume.html");
             Process.Start(path);
-            
+
         }
 
         private void ListBoxItem_ViewJsonDocumentType_OnSelected(object p_sender, RoutedEventArgs p_e)
@@ -180,16 +244,14 @@ namespace LisaResume.Pages
         }
 
 
-        private void ListBoxItem_ViewWordDocumentType_OnSelected(object p_sender, RoutedEventArgs p_e)
+        private void ListBoxItem_ViewPDFDocumentType_OnSelected(object p_sender, RoutedEventArgs p_e)
         {
-            Process.Start("word.exe",
-                          Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                                       @"Components\LisaResume.docx"));
-        }
+            FilePath =
+                Path
+                    .Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                        @"Components\LisaResume.pdf");
 
-        private void ButtonBase_OnClick(object p_sender, RoutedEventArgs p_e)
-        {
-            (Application.Current.MainWindow.FindName("Main") as Frame).Source = null;
+            Process.Start(FilePath);
         }
 
         private void ListBoxItem_ToHex_OnSelected(object p_sender, RoutedEventArgs p_e)

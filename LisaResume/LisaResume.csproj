@@ -235,5 +235,10 @@
     <Resource Include="Components\Lisa.JPG" />
     <Resource Include="Components\tree.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\LisaResume.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

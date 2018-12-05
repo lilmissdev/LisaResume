@@ -19,7 +19,7 @@ namespace LisaResume.Pages
 
 
             //P8.Content = new MainWindow();
-            var address = "lisaconnell@gmail.com";
+            var address = "connell.lisamarie@gmail.com";
             var body =
                 @"Dear Lisa:
     Your resume application program was totally rad. I am so powerfully impressed that I would like to offer you the job right now. What time works best for you for setting up an interview?
@@ -41,6 +41,7 @@ Brian Hajost";
 
 
             Process.Start("outlook.exe", $"mailto:{address}?subject={subject}&body={body}");
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

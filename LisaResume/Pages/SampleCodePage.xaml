@@ -54,6 +54,7 @@
                     <ComboBoxItem Content="Convert Resume To Html" HorizontalAlignment="Left" Width="200" Selected="ListBoxItem_ViewHtmlDocumentType_OnSelected"/>
                     <ComboBoxItem Content="Convert Resume to Hex" HorizontalAlignment="Left" Width="200" Selected="ListBoxItem_ToHex_OnSelected"/>
                     <ComboBoxItem Content="Convert Resume to Binary" HorizontalAlignment="Left" Width="200" Selected="ListBoxItem_ToBinary_OnSelected"/>
+                    <ComboBoxItem Content="Convert Resume to PDF" HorizontalAlignment="Left" Width="200" Selected="ListBoxItem_ViewPDFDocumentType_OnSelected"/>
                 </ComboBox>
             </TabItem>
 
@@ -70,6 +71,6 @@
             <TabItem Header="View in Word" MouseDoubleClick="ListBoxItem_ViewWordDocumentType_OnSelected"/>
             <TabItem Header="Default" Visibility="Hidden" IsSelected="True"/>
         </TabControl>-->
-        <Frame x:Name="SampleCodePages" Margin="10,0,0,-13" />
+        <Frame x:Name="SampleCodePages" Margin="0,0,0,-13" />
     </Grid>
 </Page>

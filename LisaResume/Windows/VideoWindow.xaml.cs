@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Reflection;
+using System.Windows;
 
 namespace LisaResume.Windows
 {
@@ -22,7 +24,6 @@ namespace LisaResume.Windows
 
 
             LisaVideo.Visibility = Visibility.Visible;
-
 
             LisaVideo.Play();
 

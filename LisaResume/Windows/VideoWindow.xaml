@@ -7,7 +7,7 @@
         xmlns:video="clr-namespace:LisaResume.Controls"
         mc:Ignorable="d"
         Title="VideoWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Name="thisGrid">
         <Grid.RowDefinitions>
 
 
@@ -32,6 +32,7 @@
 
 
         </StackPanel>
-        <MediaElement Name="LisaVideo" Source="redang.wmv" LoadedBehavior="Manual" Grid.Row="0"/>
+        <MediaElement x:Name="LisaVideo" Source="/Components/LisaResume.mp4" LoadedBehavior="Manual" Grid.Row="0"  HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" Stretch="Fill" Visibility="Collapsed"/>
     </Grid>
 </Window>
