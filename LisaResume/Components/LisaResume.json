@@ -1,95 +1,105 @@
 {
-"rootOfJson":{
-  "basics": {
-    "name": "Lisa Connell",
-    "label": "Programmer",
-    "picture": "",
-    "email": "connell.lisamarie@gmail.com",
-    "phone": "(971) 678-6327",
-    "website": "http://GitHub.com/LisaMarie",
-    "summary": "A summary of Lisa Connell...",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": [{
-      "network": "Twitter",
-      "username": "lisa",
-      "url": "http://twitter.com/Lisa"
-    }]
-  },
-  "work": [{
-    "company": "Company",
-    "position": "President",
-    "website": "http://company.com",
-    "startDate": "2013-01-01",
-    "endDate": "2014-01-01",
-    "summary": "Description...",
-    "highlights": [
-      "Started the company"
-    ]
-  }],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "website": "http://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description...",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [{
-    "institution": "University",
-    "area": "Software Development",
-    "studyType": "Bachelor",
-    "startDate": "2011-01-01",
-    "endDate": "2013-01-01",
-    "gpa": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014-10-01",
-    "website": "http://publication.com",
-    "summary": "Description..."
-  }],
-  "skills": [{
-    "name": "Web Development",
-    "level": "Master",
-    "keywords": [
-      "HTML",
-      "CSS",
-      "Javascript"
-    ]
-  }],
-  "languages": [{
-    "language": "English",
-    "fluency": "Native speaker"
-  }],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jon Martin",
-    "reference": "Reference..."
-  }]
-}
+   "rootOfJson": {
+      "basics": {
+         "email": "connell.lisamarie@gmail.com",
+         "label": "Programmer",
+         "name": "Lisa Connell",
+         "phone": "(971) 678-6327",
+         "picture": [],
+         "summary": "Highly ambitious full stack developer with professional experience and education in HTML, CSS, JavaScript, SQL, Python, and C#. Highly organized and detail-oriented professional specializing in exploring customer solutions that work.",
+         "website": [
+            "http://github.com/lilmissdev",
+            "http://repl.it/@lilmissdev"
+         ]
+      },
+      "education": {
+         "element": {
+            "area": "Software Development",
+            "courses": [
+               "HTML",
+               "CSS",
+               "Javascript",
+               "C#",
+               "Python",
+               "SQL"
+            ],
+            "endDate": "present",
+            "gpa": "4.0",
+            "institution": "Thinkful",
+            "startDate": "03-2018",
+            "website": "http://www.thinkful.com"
+         }
+      },
+      "interests": [
+         "Rock climbing",
+         "Crochet",
+         "Backpacking",
+         "Playing instruments"
+      ],
+      "location": {
+         "address": "21303 Fultonham Circle",
+         "city": "Ashburn",
+         "countryCode": "US",
+         "postalCode": "VA 20147",
+         "region": "Virginia"
+      },
+      "references": [
+         {
+            "company": "SteelCloud LLC",
+            "contact": "928-208-5038",
+            "name": "Jon Martin",
+            "position": "Developer"
+         },
+         {
+            "company": "Oracle",
+            "contact": "301-575-6781",
+            "name": "Brock Nusser",
+            "position": "Consultant"
+         }
+      ],
+      "skills": [
+         "HTML",
+         "CSS",
+         "Javascript",
+         "C#",
+         "Python",
+         "SQL",
+         "Defect & Bug Discovery",
+         "Data management",
+         "Issue Identification",
+         "Test Cases, Plans & Scripts",
+         "Problem Solving",
+         "Analytical thinking",
+         "Staff development",
+         "Team leadership"
+      ],
+      "volunteer": {
+         "element": {
+            "endDate": "2018",
+            "organization": "Habitat for Humanity",
+            "position": "Volunteer",
+            "startDate": "2012",
+            "summary": "I painted homes for the elderly who otherwise would have been evicted for HOA violations.",
+            "website": "https://www.habitat.org/"
+         }
+      },
+      "work": [
+         {
+            "company": "Robert Half",
+            "endDate": "09-2017",
+            "position": "JR Software QA Tester",
+            "startDate": "10-2014",
+            "summary": "I piloted a liaison position between Wayfair and many of our suppliers. I worked extensively with our SQL databases to collate vast amounts of information necessary to the execution of my duties. During my time at Wayfair I developed problem solving and critical thinking skills that quickly advanced my career to Operations Manager within just 9 months.",
+            "website": "http://wayfair.com"
+         },
+         {
+            "company": "Wayfair",
+            "endDate": "09-2017",
+            "position": "Supplier Operations Manager",
+            "startDate": "10-2014",
+            "summary": "I piloted a liaison position between Wayfair and many of our suppliers. I worked extensively with our SQL databases to collate vast amounts of information necessary to the execution of my duties. During my time at Wayfair I developed problem solving and critical thinking skills that quickly advanced my career to Operations Manager within just 9 months.",
+            "website": "http://wayfair.com"
+         }
+      ]
+   }
 }

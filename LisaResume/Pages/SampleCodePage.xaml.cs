@@ -249,7 +249,7 @@ namespace LisaResume.Pages
             FilePath =
                 Path
                     .Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                        @"Components\LisaResume.pdf");
+                        @"Components\Resume.pdf");
 
             Process.Start(FilePath);
         }

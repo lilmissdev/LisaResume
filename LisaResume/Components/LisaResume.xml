@@ -1,83 +1,94 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Resume>
-<basics>
-	<name>Lisa Connell</name>
-	<label>Programmer</label>
-	<picture/>
-	<email>connell.lisamarie@gmail.com</email>
-	<phone>(971) 678-6327</phone>
-	<website>http://GitHub.com/LisaMarie</website>
-	<summary>A summary of Lisa Connell...</summary>
-	<location>
-		<address>2712 Broadway St</address>
-		<postalCode>CA 94115</postalCode>
-		<city>San Francisco</city>
-		<countryCode>US</countryCode>
-		<region>California</region>
-	</location>
-	<profiles>
-		<network>Twitter</network>
-		<username>lisa</username>
-		<url>http://twitter.com/Lisa</url>
-	</profiles>
-</basics>
-<work>
-	<company>Company</company>
-	<position>President</position>
-	<website>http://company.com</website>
-	<startDate>2013-01-01</startDate>
-	<endDate>2014-01-01</endDate>
-	<summary>Description...</summary>
-	<highlights>Started the company</highlights>
-</work>
-<volunteer>
-	<organization>Organization</organization>
-	<position>Volunteer</position>
-	<website>http://organization.com/</website>
-	<startDate>2012-01-01</startDate>
-	<endDate>2013-01-01</endDate>
-	<summary>Description...</summary>
-	<highlights>Awarded &apos;Volunteer of the Month&apos;</highlights>
-</volunteer>
-<education>
-	<institution>University</institution>
-	<area>Software Development</area>
-	<studyType>Bachelor</studyType>
-	<startDate>2011-01-01</startDate>
-	<endDate>2013-01-01</endDate>
-	<gpa>4.0</gpa>
-	<courses>DB1101 - Basic SQL</courses>
-</education>
-<awards>
-	<title>Award</title>
-	<date>2014-11-01</date>
-	<awarder>Company</awarder>
-	<summary>There is no spoon.</summary>
-</awards>
-<publications>
-	<name>Publication</name>
-	<publisher>Company</publisher>
-	<releaseDate>2014-10-01</releaseDate>
-	<website>http://publication.com</website>
-	<summary>Description...</summary>
-</publications>
-<skills>
-	<name>Web Development</name>
-	<level>Master</level>
-	<keywords>HTML</keywords>
-	<keywords>CSS</keywords>
-	<keywords>Javascript</keywords>
-</skills>
-<languages>
-	<language>English</language>
-	<fluency>Native speaker</fluency>
-</languages>
-<interests>
-	<name>Wildlife</name>
-	<keywords>Ferrets</keywords>
-</interests>
-<references>
-	<name>Jon Martin</name>
-	<reference>Reference...</reference>
-</references>
-</Resume>
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <rootOfJson>
+    <basics>
+      <email>connell.lisamarie@gmail.com</email>
+      <label>Programmer</label>
+      <name>Lisa Connell</name>
+      <phone>(971) 678-6327</phone>
+      <summary>Highly ambitious full stack developer with professional experience and education in HTML, CSS, JavaScript, SQL, Python, and C#. Highly organized and detail-oriented professional specializing in exploring customer solutions that work.</summary>
+      <website>http://github.com/lilmissdev</website>
+      <website>http://repl.it/@lilmissdev</website>
+    </basics>
+    <education>
+      <element>
+        <area>Software Development</area>
+        <courses>HTML</courses>
+        <courses>CSS</courses>
+        <courses>Javascript</courses>
+        <courses>C#</courses>
+        <courses>Python</courses>
+        <courses>SQL</courses>
+        <endDate>present</endDate>
+        <gpa>4.0</gpa>
+        <institution>Thinkful</institution>
+        <startDate>03-2018</startDate>
+        <website>http://www.thinkful.com</website>
+      </element>
+    </education>
+    <interests>Rock climbing</interests>
+    <interests>Crochet</interests>
+    <interests>Backpacking</interests>
+    <interests>Playing instruments</interests>
+    <location>
+      <address>21303 Fultonham Circle</address>
+      <city>Ashburn</city>
+      <countryCode>US</countryCode>
+      <postalCode>VA 20147</postalCode>
+      <region>Virginia</region>
+    </location>
+    <references>
+      <company>SteelCloud LLC</company>
+      <contact>928-208-5038</contact>
+      <name>Jon Martin</name>
+      <position>Developer</position>
+    </references>
+    <references>
+      <company>Oracle</company>
+      <contact>301-575-6781</contact>
+      <name>Brock Nusser</name>
+      <position>Consultant</position>
+    </references>
+    <skills>HTML</skills>
+    <skills>CSS</skills>
+    <skills>Javascript</skills>
+    <skills>C#</skills>
+    <skills>Python</skills>
+    <skills>SQL</skills>
+    <skills>Defect &amp; Bug Discovery</skills>
+    <skills>Data management</skills>
+    <skills>Issue Identification</skills>
+    <skills>Test Cases, Plans &amp; Scripts</skills>
+    <skills>Problem Solving</skills>
+    <skills>Analytical thinking</skills>
+    <skills>Staff development</skills>
+    <skills>Team leadership</skills>
+    <volunteer>
+      <element>
+        <endDate>2018</endDate>
+        <organization>Habitat for Humanity</organization>
+        <position>Volunteer</position>
+        <startDate>2012</startDate>
+        <summary>I painted homes for the elderly who otherwise would have been evicted for HOA violations.</summary>
+        <website>https://www.habitat.org/</website>
+      </element>
+    </volunteer>
+    <work>
+      <company>Robert Half</company>
+      <endDate>09-2017</endDate>
+      <position>JR Software QA Tester</position>
+      <startDate>10-2014</startDate>
+      <summary>I piloted a liaison position between Wayfair and many of our suppliers. I worked extensively with our SQL databases to collate vast amounts of information necessary to the execution of my duties. During my time at Wayfair I developed problem solving and critical thinking skills that quickly advanced my career to Operations Manager within just 9 months.</summary>
+      <website>http://wayfair.com</website>
+    </work>
+    <work>
+      <company>Wayfair</company>
+      <endDate>09-2017</endDate>
+      <position>Supplier Operations Manager</position>
+      <startDate>10-2014</startDate>
+      <summary>I piloted a liaison position between Wayfair and many of our suppliers. I worked extensively with our SQL databases to collate vast amounts of information necessary to the execution of my duties. During my time at Wayfair I developed problem solving and critical thinking skills that quickly advanced my career to Operations Manager within just 9 months.</summary>
+      <website>http://wayfair.com</website>
+    </work>
+  </rootOfJson>
+  <!--Comment-->
+</root>
